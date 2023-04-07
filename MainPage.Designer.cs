@@ -40,6 +40,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planner";
+            this.Load += new System.EventHandler(this.MainPage_Load);
             this.ResumeLayout(false);
 
         }

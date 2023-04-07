@@ -12,9 +12,16 @@ namespace Planner
 {
     public partial class MainPage : Form
     {
-        public MainPage()
+        Employee em = null;
+        public MainPage(Employee employee)
         {
             InitializeComponent();
+            em = employee;
+        }
+
+        private void MainPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
