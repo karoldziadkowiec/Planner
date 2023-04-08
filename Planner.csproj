@@ -81,6 +81,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveTasksPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActiveTasksPage.Designer.cs">
+      <DependentUpon>ActiveTasksPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTaskPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTaskPage.Designer.cs">
+      <DependentUpon>AddTaskPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditTaskPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditTaskPage.Designer.cs">
+      <DependentUpon>EditTaskPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs" />
     <Compile Include="LoginPage.cs">
       <SubType>Form</SubType>
@@ -94,6 +112,12 @@
     <Compile Include="MainPage.Designer.cs">
       <DependentUpon>MainPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyProfilePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyProfilePage.Designer.cs">
+      <DependentUpon>MyProfilePage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterPage.cs">
@@ -102,11 +126,35 @@
     <Compile Include="RegisterPage.Designer.cs">
       <DependentUpon>RegisterPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="TasksDonePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TasksDonePage.Designer.cs">
+      <DependentUpon>TasksDonePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeamPage.Designer.cs">
+      <DependentUpon>TeamPage.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ActiveTasksPage.resx">
+      <DependentUpon>ActiveTasksPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTaskPage.resx">
+      <DependentUpon>AddTaskPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditTaskPage.resx">
+      <DependentUpon>EditTaskPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyProfilePage.resx">
+      <DependentUpon>MyProfilePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +167,12 @@
     </Compile>
     <EmbeddedResource Include="RegisterPage.resx">
       <DependentUpon>RegisterPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TasksDonePage.resx">
+      <DependentUpon>TasksDonePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamPage.resx">
+      <DependentUpon>TeamPage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

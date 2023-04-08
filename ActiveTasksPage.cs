@@ -10,28 +10,18 @@ using System.Windows.Forms;
 
 namespace Planner
 {
-    public partial class MainPage : Form
+    public partial class ActiveTasksPage : Form
     {
         Employee em = null;
-        public MainPage(Employee employee)
+        public ActiveTasksPage(Employee employee)
         {
             InitializeComponent();
             em = employee;
-            if(em.position != "Leader")
+            if (em.position != "Leader")
             {
                 button3.Hide();
                 button5.Hide();
             }
-        }
-
-        private void MainPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -48,11 +38,16 @@ namespace Planner
             this.Hide();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+            MainPage mainpage = new MainPage(em);
+            mainpage.Show();
+            this.Hide();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            ActiveTasksPage activetaskspage = new ActiveTasksPage(em);
-            activetaskspage.Show();
-            this.Hide();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
