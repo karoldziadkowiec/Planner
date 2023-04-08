@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,29 @@ namespace Planner
             {
                 button3.Hide();
                 button5.Hide();
+            }
+            string connectionString = "server=localhost;database=planner;username=root;password=;";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            MySqlCommand cmdDataBase = new MySqlCommand("SELECT name AS 'NAME', surname AS 'SURNAME', login AS 'LOGIN', position AS 'POSITION' FROM employees ORDER BY id ASC", connection);
+            try
+            {
+                //DATAGRIDVIEW
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmdDataBase);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
@@ -76,6 +100,11 @@ namespace Planner
             LoginPage loginpage = new LoginPage();
             loginpage.Show();
             this.Hide();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
