@@ -380,6 +380,7 @@
             // 
             this.name2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.name2.Location = new System.Drawing.Point(382, 228);
+            this.name2.MaxLength = 20;
             this.name2.Name = "name2";
             this.name2.Size = new System.Drawing.Size(209, 33);
             this.name2.TabIndex = 101;
@@ -388,6 +389,7 @@
             // 
             this.surname2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.surname2.Location = new System.Drawing.Point(603, 228);
+            this.surname2.MaxLength = 20;
             this.surname2.Name = "surname2";
             this.surname2.Size = new System.Drawing.Size(218, 33);
             this.surname2.TabIndex = 102;
@@ -396,6 +398,7 @@
             // 
             this.number2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.number2.Location = new System.Drawing.Point(603, 298);
+            this.number2.MaxLength = 9;
             this.number2.Name = "number2";
             this.number2.Size = new System.Drawing.Size(218, 33);
             this.number2.TabIndex = 104;
@@ -404,6 +407,7 @@
             // 
             this.email2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.email2.Location = new System.Drawing.Point(604, 444);
+            this.email2.MaxLength = 30;
             this.email2.Name = "email2";
             this.email2.Size = new System.Drawing.Size(218, 33);
             this.email2.TabIndex = 105;
@@ -412,6 +416,7 @@
             // 
             this.cpassword2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cpassword2.Location = new System.Drawing.Point(604, 371);
+            this.cpassword2.MaxLength = 15;
             this.cpassword2.Name = "cpassword2";
             this.cpassword2.PasswordChar = '*';
             this.cpassword2.Size = new System.Drawing.Size(218, 33);
@@ -421,6 +426,7 @@
             // 
             this.password2.Font = new System.Drawing.Font("Comic Sans MS", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.password2.Location = new System.Drawing.Point(383, 371);
+            this.password2.MaxLength = 15;
             this.password2.Name = "password2";
             this.password2.PasswordChar = '*';
             this.password2.Size = new System.Drawing.Size(209, 33);

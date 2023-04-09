@@ -28,7 +28,7 @@ namespace Planner
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
 
-            MySqlCommand cmdDataBase = new MySqlCommand("SELECT name AS 'NAME', surname AS 'SURNAME', login AS 'LOGIN', position AS 'POSITION' FROM employees ORDER BY id ASC", connection);
+            MySqlCommand cmdDataBase = new MySqlCommand("SELECT name AS 'NAME', surname AS 'SURNAME', login AS 'LOGIN', position AS 'POSITION' FROM employees WHERE login != '" + em.login + "' ORDER BY id ASC", connection);
             try
             {
                 //DATAGRIDVIEW
@@ -103,6 +103,11 @@ namespace Planner
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TeamPage_Load(object sender, EventArgs e)
         {
 
         }

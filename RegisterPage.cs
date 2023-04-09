@@ -127,5 +127,10 @@ namespace Planner
                 MessageBox.Show("Registration error. The given login already has an account.", "Planner");
             }
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

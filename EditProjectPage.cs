@@ -8,15 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Planner
 {
-    public partial class AddTaskPage : Form
+    public partial class EditProjectPage : Form
     {
         Employee em = null;
-        public AddTaskPage(Employee employee)
+        public EditProjectPage(Employee employee)
         {
-            InitializeComponent(); 
+            InitializeComponent();
             em = employee;
             if (em.position != "Leader")
             {
@@ -87,7 +88,9 @@ namespace Planner
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            AddTaskPage addtaskpage = new AddTaskPage(em);
+            addtaskpage.Show();
+            this.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -104,62 +107,116 @@ namespace Planner
             this.Hide();
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            CreateProjectPage createprojectpage = new CreateProjectPage(em);
-            createprojectpage.Show();
-            this.Hide();
-        }
+        MySqlConnection conn = new MySqlConnection("datasource=localhost;username=root;password=;database=planner");
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button11_Click(object sender, EventArgs e)
         {
+            Project.Text = comboBox1.Text;
             string project = comboBox1.Text;
-            string name = textBox1.Text;
-            DateTime start_date = DateTime.Now;
-            string end_date = dateTimePicker1.Text;
-            string description = textBox3.Text;
-
-            if (project.Length == 0 || name.Length == 0 || end_date.Length == 0 || description.Length == 0)
+            if (project.Length == 0)
             {
-                MessageBox.Show("Complete the empty fields.", "Planner");
+                MessageBox.Show("Please choose the project.", "Planner");
                 return;
             }
 
             try
             {
+                conn.Open();
+                string query = "SELECT * FROM projects WHERE name = '" + project + "'";
+                MySqlCommand command = new MySqlCommand(query, conn);
+                MySqlDataReader reader = command.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string end_date = reader.GetString(3);
+                        string description = reader.GetString(4);
+
+                        dateTimePicker1.Text = end_date;
+                        textBox3.Text = description;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Project not found.", "Planner");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error.", "Planner");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            String end_date = dateTimePicker1.Text;
+            String description = textBox3.Text;
+            if (end_date.Length == 0 || description.Length == 0)
+            {
+                MessageBox.Show("Complete the empty fields.", "Planner");
+                return;
+            }
+            try
+            {
+                conn.Open();
+                string sqlQuery = "UPDATE projects SET end_date='" + end_date + "', description='" + description + "' WHERE name='" + Project.Text + "'";
+                MySqlCommand command = new MySqlCommand(sqlQuery, conn);
+                command.ExecuteNonQuery();
+
+                MessageBox.Show("Project updated successfully.", "Planner");
+                ActiveTasksPage activetaskspage = new ActiveTasksPage(em);
+                activetaskspage.Show();
+                this.Hide();
+            }
+            catch
+            {
+                MessageBox.Show("Editing error.", "Planner");
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string name = comboBox1.Text;
+            try
+            {
                 string connectionString = "server=localhost;database=planner;username=root;password=;";
+
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sqlQuery = "INSERT INTO tasks (name, start_date, end_date, description, project) VALUES (@name, @start_date, @end_date, @description, @project)";
+                    string sqlQuery = "DELETE FROM projects WHERE name = @name";
                     MySqlCommand command = new MySqlCommand(sqlQuery, conn);
                     command.Parameters.AddWithValue("@name", name);
-                    command.Parameters.AddWithValue("@start_date", start_date);
-                    command.Parameters.AddWithValue("@end_date", end_date);
-                    command.Parameters.AddWithValue("@description", description);
-                    command.Parameters.AddWithValue("@project", project);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("The task has been created.", "Planner");
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Project successfully removed.", "Planner");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Project not found.", "Planner");
+                        return;
+                    }
+
                     conn.Close();
                     ActiveTasksPage activetaskspage = new ActiveTasksPage(em);
                     activetaskspage.Show();
                     this.Hide();
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error: " + ex.Message, "Planner");
+                MessageBox.Show("Error removing profile.", "Planner");
             }
-        }
-
-        private void AddTaskPage_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

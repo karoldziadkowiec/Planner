@@ -93,11 +93,23 @@
     <Compile Include="AddTaskPage.Designer.cs">
       <DependentUpon>AddTaskPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateProjectPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateProjectPage.Designer.cs">
+      <DependentUpon>CreateProjectPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditProfilePage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditProfilePage.Designer.cs">
       <DependentUpon>EditProfilePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditProjectPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProjectPage.Designer.cs">
+      <DependentUpon>EditProjectPage.cs</DependentUpon>
     </Compile>
     <Compile Include="EditTaskPage.cs">
       <SubType>Form</SubType>
@@ -150,8 +162,14 @@
     <EmbeddedResource Include="AddTaskPage.resx">
       <DependentUpon>AddTaskPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateProjectPage.resx">
+      <DependentUpon>CreateProjectPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditProfilePage.resx">
       <DependentUpon>EditProfilePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProjectPage.resx">
+      <DependentUpon>EditProjectPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditTaskPage.resx">
       <DependentUpon>EditTaskPage.cs</DependentUpon>
