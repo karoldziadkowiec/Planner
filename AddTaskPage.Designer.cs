@@ -217,7 +217,7 @@
             this.textBox1.Location = new System.Drawing.Point(351, 307);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(237, 33);
-            this.textBox1.TabIndex = 104;
+            this.textBox1.TabIndex = 3;
             // 
             // panel5
             // 
@@ -248,7 +248,7 @@
             this.button10.Location = new System.Drawing.Point(643, 440);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(210, 52);
-            this.button10.TabIndex = 105;
+            this.button10.TabIndex = 6;
             this.button10.Text = "ADD TASK";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -262,7 +262,7 @@
             this.button8.Location = new System.Drawing.Point(351, 122);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(210, 52);
-            this.button8.TabIndex = 106;
+            this.button8.TabIndex = 1;
             this.button8.Text = "NEW PROJECT";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -276,7 +276,7 @@
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 4, 9, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(233, 35);
-            this.dateTimePicker1.TabIndex = 130;
+            this.dateTimePicker1.TabIndex = 4;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox3
@@ -286,7 +286,7 @@
             this.textBox3.MaxLength = 1000;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(502, 33);
-            this.textBox3.TabIndex = 129;
+            this.textBox3.TabIndex = 5;
             // 
             // panel6
             // 
@@ -335,7 +335,7 @@
             this.comboBox1.Location = new System.Drawing.Point(351, 230);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(237, 36);
-            this.comboBox1.TabIndex = 131;
+            this.comboBox1.TabIndex = 2;
             // 
             // panel7
             // 

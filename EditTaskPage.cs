@@ -115,7 +115,7 @@ namespace Planner
             string project = comboBox1.Text;
             string connectionString = "server=localhost;database=planner;username=root;password=;";
             MySqlConnection connection = new MySqlConnection(connectionString);
-            MySqlCommand cmdDataBase2 = new MySqlCommand("SELECT name FROM tasks WHERE project = '" + project + "'ORDER BY name", connection);
+            MySqlCommand cmdDataBase2 = new MySqlCommand("SELECT name FROM tasks WHERE project = '" + project + "' AND activity != 1 ORDER BY name", connection);
             try
             {
                 connection.Open();

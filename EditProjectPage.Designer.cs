@@ -68,7 +68,7 @@
             this.button11.Location = new System.Drawing.Point(622, 147);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(165, 36);
-            this.button11.TabIndex = 176;
+            this.button11.TabIndex = 3;
             this.button11.Text = "SEARCH";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
@@ -82,7 +82,7 @@
             this.button9.Location = new System.Drawing.Point(353, 362);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(210, 52);
-            this.button9.TabIndex = 172;
+            this.button9.TabIndex = 7;
             this.button9.Text = "DELETE PROJECT";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -104,7 +104,7 @@
             this.label6.Location = new System.Drawing.Point(347, 107);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(194, 26);
-            this.label6.TabIndex = 170;
+            this.label6.TabIndex = 1;
             this.label6.Text = "Project";
             // 
             // comboBox1
@@ -114,7 +114,7 @@
             this.comboBox1.Location = new System.Drawing.Point(353, 147);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(237, 36);
-            this.comboBox1.TabIndex = 169;
+            this.comboBox1.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
@@ -125,7 +125,7 @@
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 4, 9, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(233, 35);
-            this.dateTimePicker1.TabIndex = 168;
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // textBox3
             // 
@@ -134,7 +134,7 @@
             this.textBox3.MaxLength = 1000;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(502, 33);
-            this.textBox3.TabIndex = 167;
+            this.textBox3.TabIndex = 5;
             // 
             // panel6
             // 
@@ -185,7 +185,7 @@
             this.button10.Location = new System.Drawing.Point(645, 362);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(210, 52);
-            this.button10.TabIndex = 161;
+            this.button10.TabIndex = 6;
             this.button10.Text = "EDIT PROJECT";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);

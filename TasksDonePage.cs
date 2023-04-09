@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,32 @@ namespace Planner
             {
                 button3.Hide();
                 button5.Hide();
+            }
+            string connectionString = "server=localhost;database=planner;username=root;password=;";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlCommand cmdDataBase1 = new MySqlCommand("SELECT name FROM projects ORDER BY name", connection);
+            try
+            {
+                //DATAGRIDVIEW
+                connection.Open();
+
+                //COMBOBOX1
+                MySqlDataAdapter adapter1 = new MySqlDataAdapter(cmdDataBase1);
+                DataTable dt1 = new DataTable();
+                adapter1.Fill(dt1);
+
+                // dodanie danych do comboBox1
+                comboBox1.DataSource = dt1;
+                comboBox1.DisplayMember = "name";
+                comboBox1.ValueMember = "name";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
@@ -76,6 +103,40 @@ namespace Planner
             LoginPage loginpage = new LoginPage();
             loginpage.Show();
             this.Hide();
+        }
+
+        private void TasksDonePage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            string project = comboBox1.Text;
+            string connectionString = "server=localhost;database=planner;username=root;password=;";
+
+            MySqlConnection connection = new MySqlConnection(connectionString);
+            connection.Open();
+
+            MySqlCommand cmdDataBase = new MySqlCommand("SELECT name AS 'NAME', start_date AS 'START DATE', end_date AS 'END DATE' FROM tasks WHERE project = @project AND activity = 1 ORDER BY end_date ASC", connection);
+            cmdDataBase.Parameters.AddWithValue("@project", project);
+            try
+            {
+                //DATAGRIDVIEW
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmdDataBase);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }

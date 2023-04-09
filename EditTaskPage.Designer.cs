@@ -244,7 +244,7 @@
             this.comboBox1.Location = new System.Drawing.Point(350, 185);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(237, 36);
-            this.comboBox1.TabIndex = 145;
+            this.comboBox1.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
@@ -255,7 +255,7 @@
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 4, 9, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(233, 35);
-            this.dateTimePicker1.TabIndex = 144;
+            this.dateTimePicker1.TabIndex = 7;
             // 
             // textBox3
             // 
@@ -264,7 +264,7 @@
             this.textBox3.MaxLength = 1000;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(502, 33);
-            this.textBox3.TabIndex = 143;
+            this.textBox3.TabIndex = 8;
             // 
             // panel6
             // 
@@ -315,7 +315,7 @@
             this.button8.Location = new System.Drawing.Point(350, 90);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(210, 52);
-            this.button8.TabIndex = 138;
+            this.button8.TabIndex = 1;
             this.button8.Text = "EDIT PROJECT";
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
@@ -329,7 +329,7 @@
             this.button10.Location = new System.Drawing.Point(642, 475);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(210, 52);
-            this.button10.TabIndex = 137;
+            this.button10.TabIndex = 9;
             this.button10.Text = "EDIT TASK";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -341,7 +341,7 @@
             this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(237, 33);
-            this.textBox1.TabIndex = 136;
+            this.textBox1.TabIndex = 6;
             // 
             // panel5
             // 
@@ -372,7 +372,7 @@
             this.button9.Location = new System.Drawing.Point(350, 475);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(210, 52);
-            this.button9.TabIndex = 148;
+            this.button9.TabIndex = 10;
             this.button9.Text = "DELETE TASK";
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
@@ -404,7 +404,7 @@
             this.comboBox2.Location = new System.Drawing.Point(350, 264);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(237, 36);
-            this.comboBox2.TabIndex = 149;
+            this.comboBox2.TabIndex = 4;
             // 
             // button11
             // 
@@ -415,7 +415,7 @@
             this.button11.Location = new System.Drawing.Point(619, 185);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(165, 36);
-            this.button11.TabIndex = 152;
+            this.button11.TabIndex = 3;
             this.button11.Text = "SEARCH";
             this.button11.UseVisualStyleBackColor = false;
             this.button11.Click += new System.EventHandler(this.button11_Click);
@@ -429,7 +429,7 @@
             this.button12.Location = new System.Drawing.Point(619, 266);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(165, 36);
-            this.button12.TabIndex = 153;
+            this.button12.TabIndex = 5;
             this.button12.Text = "SEARCH";
             this.button12.UseVisualStyleBackColor = false;
             this.button12.Click += new System.EventHandler(this.button12_Click);

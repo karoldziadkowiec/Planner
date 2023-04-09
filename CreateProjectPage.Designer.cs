@@ -63,7 +63,7 @@
             this.button10.Location = new System.Drawing.Point(655, 408);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(225, 52);
-            this.button10.TabIndex = 114;
+            this.button10.TabIndex = 4;
             this.button10.Text = "CREATE PROJECT";
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
@@ -75,7 +75,7 @@
             this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(261, 33);
-            this.textBox1.TabIndex = 113;
+            this.textBox1.TabIndex = 1;
             // 
             // panel5
             // 
@@ -277,7 +277,7 @@
             this.textBox3.MaxLength = 1000;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(532, 33);
-            this.textBox3.TabIndex = 120;
+            this.textBox3.TabIndex = 3;
             // 
             // panel6
             // 
@@ -308,7 +308,7 @@
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 4, 9, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(261, 35);
-            this.dateTimePicker1.TabIndex = 121;
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // CreateProjectPage
             // 

@@ -118,6 +118,7 @@ namespace Planner
             DateTime start_date = DateTime.Now;
             string end_date = dateTimePicker1.Text;
             string description = textBox3.Text;
+            int activity = 0;
 
             if (project.Length == 0 || name.Length == 0 || end_date.Length == 0 || description.Length == 0)
             {
@@ -131,13 +132,14 @@ namespace Planner
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sqlQuery = "INSERT INTO tasks (name, start_date, end_date, description, project) VALUES (@name, @start_date, @end_date, @description, @project)";
+                    string sqlQuery = "INSERT INTO tasks (name, start_date, end_date, description, project, activity) VALUES (@name, @start_date, @end_date, @description, @project, @activity)";
                     MySqlCommand command = new MySqlCommand(sqlQuery, conn);
                     command.Parameters.AddWithValue("@name", name);
                     command.Parameters.AddWithValue("@start_date", start_date);
                     command.Parameters.AddWithValue("@end_date", end_date);
                     command.Parameters.AddWithValue("@description", description);
                     command.Parameters.AddWithValue("@project", project);
+                    command.Parameters.AddWithValue("@activity", activity);
                     command.ExecuteNonQuery();
                     MessageBox.Show("The task has been created.", "Planner");
                     conn.Close();
