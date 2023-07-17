@@ -1,5 +1,10 @@
 # Planner
-The project presents a window application with an interface for planning and managing project tasks in an IT team. It is a good example of using technology to improve IT processes. The application was created in C#. Thanks to such an application, an employee of an IT company can more easily manage and plan his projects and tasks. The application has two forms of use: from the Leader's side and from the employee's side.
+The project presents a window application with an interface for planning and managing project tasks in an IT team. It is a good example of using technology to improve IT processes. Thanks to such an application, an employee of an IT company can more easily manage and plan his projects and tasks. The application has two forms of use: from the Leader's side and from the employee's side.
+
+Technologies used in the project: C#, .NET, MySQL.
+
+Features of project: registering, logging in, editing the profile, deleting the profile, displaying team members, adding a new project, tasks by entering the name and description about it, viewing task's information, editing task's information, logging out.
+
 Leader's side:
 ![Login Page](https://github.com/karoldziadkowiec/Planner/blob/master/photos/1.png)
 
