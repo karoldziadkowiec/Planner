@@ -3,7 +3,7 @@ The project presents a window application with an interface for planning and man
 
 Technologies used in the project: C#, .NET, MySQL.
 
-Features of project: registering, logging in, editing the profile, deleting the profile, displaying team members, adding a new project, tasks by entering the name and description about it, viewing task's information, editing task's information, logging out.
+Features of the project: registering, logging in, editing the profile, deleting the profile, displaying team members, adding a new project, tasks by entering the name and description about it, viewing task's information, editing task's information, logging out.
 
 Leader's side:
 ![Login Page](https://github.com/karoldziadkowiec/Planner/blob/master/photos/1.png)
