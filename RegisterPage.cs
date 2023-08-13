@@ -17,9 +17,11 @@ namespace Planner
         public RegisterPage()
         {
             InitializeComponent();
+
             string connectionString = "server=localhost;database=planner;username=root;password=;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand cmdDataBase1 = new MySqlCommand("SELECT name FROM positions ORDER BY name", connection);
+
             try
             {
                 connection.Open();
@@ -62,6 +64,7 @@ namespace Planner
             String birthday = dateTimePicker1.Text;
             String phone = textBox7.Text;
             String position = comboBox1.Text;
+
             if (name.Length == 0 || surname.Length == 0 || email.Length == 0 || login.Length == 0 || password.Length == 0 || confirmPassword.Length == 0 || phone.Length == 0 || birthday.Length == 0)
             {
                 MessageBox.Show("Complete the empty fields.", "Planner");
@@ -97,6 +100,7 @@ namespace Planner
                 MessageBox.Show("Accept the terms of the regulations.", "Planner");
                 return;
             }
+
             try
             {
                 string connectionString = "server=localhost;database=planner;username=root;password=;";
@@ -115,8 +119,10 @@ namespace Planner
                     command.Parameters.AddWithValue("@phone", phone);
                     command.Parameters.AddWithValue("@position", position);
                     command.ExecuteNonQuery();
+
                     MessageBox.Show("Account successfully registered.", "Planner");
                     conn.Close();
+
                     LoginPage loginpage = new LoginPage();
                     loginpage.Show();
                     this.Hide();

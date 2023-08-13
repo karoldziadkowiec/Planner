@@ -16,7 +16,9 @@ namespace Planner
         public MainPage(Employee employee)
         {
             InitializeComponent();
+
             em = employee;
+
             if(em.position != "Leader")
             {
                 button3.Hide();

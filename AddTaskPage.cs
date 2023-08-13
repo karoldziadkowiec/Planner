@@ -141,8 +141,10 @@ namespace Planner
                     command.Parameters.AddWithValue("@project", project);
                     command.Parameters.AddWithValue("@activity", activity);
                     command.ExecuteNonQuery();
+
                     MessageBox.Show("The task has been created.", "Planner");
                     conn.Close();
+
                     ActiveTasksPage activetaskspage = new ActiveTasksPage(em);
                     activetaskspage.Show();
                     this.Hide();

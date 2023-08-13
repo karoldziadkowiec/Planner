@@ -98,6 +98,7 @@ namespace Planner
             try
             {
                 string connectionString = "server=localhost;database=planner;username=root;password=;";
+
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
@@ -108,8 +109,10 @@ namespace Planner
                     command.Parameters.AddWithValue("@end_date", end_date);
                     command.Parameters.AddWithValue("@description", description);
                     command.ExecuteNonQuery();
+
                     MessageBox.Show("The project has been created.", "Planner");
                     conn.Close();
+
                     AddTaskPage addtaskpage = new AddTaskPage(em);
                     addtaskpage.Show();
                     this.Hide();

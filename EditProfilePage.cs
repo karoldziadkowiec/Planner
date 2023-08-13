@@ -18,6 +18,7 @@ namespace Planner
         public EditProfilePage(Employee employee)
         {
             InitializeComponent();
+
             name2.Text = employee.name;
             surname2.Text = employee.surname;
             login2.Text = employee.login;
@@ -27,7 +28,9 @@ namespace Planner
             email2.Text = employee.email;
             birthday2.Text = employee.date;
             position.Text = employee.position;
+
             em = employee;
+
             if (em.position != "Leader")
             {
                 button3.Hide();
@@ -98,6 +101,7 @@ namespace Planner
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -155,6 +159,7 @@ namespace Planner
 
                     MessageBox.Show("Successfully corrected the data.", "Planner");
                     conn.Close();
+
                     MyProfilePage myprofilepage = new MyProfilePage(em);
                     myprofilepage.Show();
                     this.Hide();

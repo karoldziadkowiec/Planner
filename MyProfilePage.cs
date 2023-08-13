@@ -18,6 +18,7 @@ namespace Planner
         public MyProfilePage(Employee employee)
         {
             InitializeComponent();
+
             name.Text = employee.name;
             surname.Text = employee.surname;
             login.Text = employee.login;
@@ -25,7 +26,9 @@ namespace Planner
             email.Text = employee.email;
             data.Text = employee.date;
             position.Text = employee.position;
+
             em = employee;
+
             if (em.position != "Leader")
             {
                 button3.Hide();
@@ -103,6 +106,7 @@ namespace Planner
         private void button8_Click(object sender, EventArgs e)
         {
             int id = em.id;
+
             try
             {
                 string connectionString = "server=localhost;database=planner;username=root;password=;";

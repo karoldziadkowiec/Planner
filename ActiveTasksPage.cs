@@ -127,6 +127,7 @@ namespace Planner
 
             MySqlCommand cmdDataBase = new MySqlCommand("SELECT name AS 'NAME', start_date AS 'START DATE', end_date AS 'END DATE', description AS 'DESCRIPTION' FROM tasks WHERE project = @project AND activity != 1 ORDER BY end_date ASC", connection); 
             cmdDataBase.Parameters.AddWithValue("@project", project);
+
             try
             {
                 //DATAGRIDVIEW
@@ -134,7 +135,6 @@ namespace Planner
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
-
             }
             catch (Exception ex)
             {

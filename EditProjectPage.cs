@@ -18,12 +18,15 @@ namespace Planner
         public EditProjectPage(Employee employee)
         {
             InitializeComponent();
+
             em = employee;
+
             if (em.position != "Leader")
             {
                 button3.Hide();
                 button5.Hide();
             }
+
             string connectionString = "server=localhost;database=planner;username=root;password=;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand cmdDataBase1 = new MySqlCommand("SELECT name FROM projects ORDER BY name", connection);
@@ -108,11 +111,11 @@ namespace Planner
         }
 
         MySqlConnection conn = new MySqlConnection("datasource=localhost;username=root;password=;database=planner");
-
         private void button11_Click(object sender, EventArgs e)
         {
             Project.Text = comboBox1.Text;
             string project = comboBox1.Text;
+
             if (project.Length == 0)
             {
                 MessageBox.Show("Please choose the project.", "Planner");
@@ -155,6 +158,7 @@ namespace Planner
         {
             String end_date = dateTimePicker1.Text;
             String description = textBox3.Text;
+
             if (end_date.Length == 0 || description.Length == 0)
             {
                 MessageBox.Show("Complete the empty fields.", "Planner");
@@ -185,6 +189,7 @@ namespace Planner
         private void button9_Click(object sender, EventArgs e)
         {
             string name = comboBox1.Text;
+
             try
             {
                 string connectionString = "server=localhost;database=planner;username=root;password=;";

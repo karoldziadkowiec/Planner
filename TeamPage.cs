@@ -17,18 +17,21 @@ namespace Planner
         public TeamPage(Employee employee)
         {
             InitializeComponent();
+
             em = employee;
+
             if (em.position != "Leader")
             {
                 button3.Hide();
                 button5.Hide();
             }
+
             string connectionString = "server=localhost;database=planner;username=root;password=;";
 
             MySqlConnection connection = new MySqlConnection(connectionString);
             connection.Open();
-
             MySqlCommand cmdDataBase = new MySqlCommand("SELECT name AS 'NAME', surname AS 'SURNAME', login AS 'LOGIN', position AS 'POSITION' FROM employees WHERE login != '" + em.login + "' ORDER BY id ASC", connection);
+            
             try
             {
                 //DATAGRIDVIEW
@@ -36,7 +39,6 @@ namespace Planner
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 dataGridView1.DataSource = dt;
-
             }
             catch (Exception ex)
             {

@@ -18,15 +18,19 @@ namespace Planner
         public EditTaskPage(Employee employee)
         {
             InitializeComponent();
+
             em = employee;
+
             if (em.position != "Leader")
             {
                 button3.Hide();
                 button5.Hide();
             }
+
             string connectionString = "server=localhost;database=planner;username=root;password=;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand cmdDataBase1 = new MySqlCommand("SELECT name FROM projects ORDER BY name", connection);
+
             try
             {
                 connection.Open();
@@ -114,8 +118,10 @@ namespace Planner
         {
             string project = comboBox1.Text;
             string connectionString = "server=localhost;database=planner;username=root;password=;";
+
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand cmdDataBase2 = new MySqlCommand("SELECT name FROM tasks WHERE project = '" + project + "' AND activity != 1 ORDER BY name", connection);
+            
             try
             {
                 connection.Open();
@@ -139,10 +145,12 @@ namespace Planner
                 connection.Close();
             }
         }
+
         MySqlConnection conn = new MySqlConnection("datasource=localhost;username=root;password=;database=planner");
         private void button12_Click(object sender, EventArgs e)
         {
             string task = comboBox2.Text;
+
             if (task.Length == 0)
             {
                 MessageBox.Show("Please choose the task.", "Planner");
@@ -189,11 +197,13 @@ namespace Planner
             String name = textBox1.Text;
             String end_date = dateTimePicker1.Text;
             String description = textBox3.Text;
+
             if (name.Length == 0 || end_date.Length == 0 || description.Length == 0 )
             {
                 MessageBox.Show("Complete the empty fields.", "Planner");
                 return;
             }
+
             try
             {
                 conn.Open();
@@ -219,6 +229,7 @@ namespace Planner
         private void button9_Click(object sender, EventArgs e)
         {
             string name = comboBox2.Text;
+
             try
             {
                 string connectionString = "server=localhost;database=planner;username=root;password=;";

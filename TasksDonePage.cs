@@ -17,15 +17,19 @@ namespace Planner
         public TasksDonePage(Employee employee)
         {
             InitializeComponent();
+
             em = employee;
+
             if (em.position != "Leader")
             {
                 button3.Hide();
                 button5.Hide();
             }
+
             string connectionString = "server=localhost;database=planner;username=root;password=;";
             MySqlConnection connection = new MySqlConnection(connectionString);
             MySqlCommand cmdDataBase1 = new MySqlCommand("SELECT name FROM projects ORDER BY name", connection);
+
             try
             {
                 //DATAGRIDVIEW

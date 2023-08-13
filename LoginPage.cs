@@ -17,6 +17,7 @@ namespace Planner
         {
             InitializeComponent();
         }
+
         MySqlConnection conn = new MySqlConnection("datasource=localhost;username=root;password=;database=planner");
         private void LoginPage_Load(object sender, EventArgs e)
         {
@@ -29,6 +30,7 @@ namespace Planner
             string login, password;
             login = textBox1.Text;
             password = textBox2.Text;
+
             MySqlCommand command = new MySqlCommand();
 
             try
@@ -53,6 +55,7 @@ namespace Planner
                         string phone = reader.GetString(7);
                         string position = reader.GetString(8);
                         employee = new Employee(id, name, surname, login, email, password, date, phone, position);
+
                         MainPage main = new MainPage(employee);
                         main.Show();
                         this.Hide();
